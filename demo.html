@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/echarts.min.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+  //初始化实例对象
+  var myChart = echarts.init(document.querySelector(".box"));
+  //指定图标的配置和数据
+  var option = {
+      xAxis: {
+          type: 'category',
+          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [{
+          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          type: 'line'
+      }]
+  };
+  /*
+  * 1. title: 设置图标标题
+  * 2. legend: 图例组件
+  * 3. tooltip: 提示框组件
+  * 4. toolbox:工具箱组件
+  * 5. grid：网格配置  grid 可以控制线形图，柱状图图表大小
+  *    containerLabel: 刻度标签是否显示
+  * 6. xAxis 设置x轴相关配置
+  * boundaryGap：是否让我们的线条和坐标轴有缝隙
+  * 7. yAxis 设置y轴相关配置
+  * 8. series：系列图标配置。他决定着显示哪种类型的图标
+  * stack 的值如果相同就会发生数据堆叠，同个类目轴上系列配置相同的`stack`值后，后一个系列的值会在前一个系列的值上相加 一般不需要
+  * 9.color 设置我们线条的颜色，注意后面是个数组
+  *
+  * * */
+  //把配置项给实例对象
+    myChart.setOption(option)
+</script>
+</body>
+</html>
